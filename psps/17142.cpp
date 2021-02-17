@@ -39,12 +39,6 @@ void spr(int t) {
 					o[i][j - 1] = 2;
 				}
 			}
-	for (int i = 1; i <= N; i++) {
-		for (int j = 1; j <= N; j++)
-			cout << f[i][j] << " ";
-		cout << "\n";
-	}
-	cout << "\n";
 
 	st = 0;
 	for (int i = 1; i <= N; i++)
@@ -71,12 +65,21 @@ void sel(int a, int s) {
 	}
 	v1 = vec[a].first;
 	v2 = vec[a].second;
-	f[v1][v2] = 2;
-	v[v1][v2] = 1;
-	for (int i = a + 1; i < vec.size(); i++)
+
+	for (int i = 1; i <= N; i++) {
+		for (int j = 1; j <= N; j++)
+			cout << f[i][j] << " ";
+		cout << "\n";
+	}
+	cout << "\n";
+
+	for (int i = a + 1; i < vec.size(); i++) {
+		f[v1][v2] = 2;
+		v[v1][v2] = 1;
 		sel(i, s + 1);
-	f[v1][v2] = 0;
-	v[v1][v2] = 0;
+		f[v1][v2] = 0;
+		v[v1][v2] = 0;
+	}
 }
 
 
