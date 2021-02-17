@@ -17,6 +17,9 @@ void spr(int t) {
 	if (ful()) {
 		cout << t<<" ";
 		ans = min(ans, t);
+		for (int i = 1; i <= N; i++)
+			for (int j = 1; j <= N; j++)
+				f[i][j] = 0;
 		return;
 	}
 	for (int i = 1; i <= N; i++)
@@ -49,8 +52,12 @@ void spr(int t) {
 			}
 			o[i][j] = 0;
 		}
-	if (!st)
+	if (!st) {
+		for (int i = 1; i <= N; i++)
+			for (int j = 1; j <= N; j++)
+				f[i][j] = 0;
 		return;
+	}
 	else
 		spr(t + 1);
 }
