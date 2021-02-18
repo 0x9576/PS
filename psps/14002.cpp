@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int arr[1005], p[1005], ma, N,mav;
+int arr[1005], p[1005], ma, N,mav,tv;
 vector<int>vec[1005];
 int main() {
 	cin >> N;
@@ -13,9 +13,11 @@ int main() {
 			if (arr[i] > arr[j])
 				if (p[i] < p[j] + 1) {
 					p[i] = p[j] + 1;
-					vec[i].push_back(arr[j]);
+					tv = j;
 				}
 		}
+		for (int k = 0; k < vec[tv].size(); k++)
+			vec[i].push_back(vec[tv][k]);
 		vec[i].push_back(arr[i]);
 		if (ma < p[i]) {
 			ma = p[i];
@@ -23,8 +25,6 @@ int main() {
 		}
 	}
 	cout << ma<<endl;
-	for (int i = 1; i < vec[mav].size(); i++) {
+	for (int i = 0; i < vec[mav].size(); i++)
 		printf("%d ", vec[mav][i]);
-	}
-
 }
