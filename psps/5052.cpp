@@ -1,7 +1,7 @@
 #include<iostream>
 #include<cstring>
 using namespace std;
-int t,n;
+int t, n;
 char pn[12];
 bool ans;
 
@@ -38,6 +38,6 @@ int main() {
 			if (!ans) continue;
 			ans = root->ins(pn);
 		}
-		cout << (ans ? "YES" : "NO")<<endl;
+		cout << (ans ? "YES" : "NO") << endl;
 	}
 }
