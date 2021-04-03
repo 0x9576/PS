@@ -18,5 +18,14 @@
     <ClCompile Include="p60060.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="p60059.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="p60058.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="p60057.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

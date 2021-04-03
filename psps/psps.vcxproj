@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="p60057.cpp" />
+    <ClCompile Include="p60058.cpp" />
+    <ClCompile Include="p60059.cpp" />
     <ClCompile Include="p60060.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
