@@ -18,14 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="p60057.cpp" />
-    <ClCompile Include="p60058.cpp" />
-    <ClCompile Include="p60059.cpp" />
-    <ClCompile Include="p60060.cpp" />
-    <ClCompile Include="p60061.cpp" />
-    <ClCompile Include="p60063.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
