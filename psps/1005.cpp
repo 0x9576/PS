@@ -1,46 +1,46 @@
 #include<iostream>
+#include<algorithm>
 #include<vector>
 #include<queue>
-#include<cstring>
 using namespace std;
-int T, cons[1010], N, K, k1, k2, d, q1, dp[1010], nr[1010],si = sizeof(dp);
 
 int main() {
+	int T, N, K, a, b, W;
 	cin >> T;
 	while (T--) {
-		memset(dp, 0, si);
-		memset(cons, 0, si);
-		memset(nr, 0, si);
-		vector<int> edge[1010];
+		vector<int> edge[1005];
 		queue<int> q;
+		int con[1005] = { 0, }, level[1005] = { 0, }, ans[1005] = { 0, };
 		cin >> N >> K;
 		for (int i = 1; i <= N; i++)
-			scanf("%d", cons + i);
-		for (int i = 0; i < K; i++) {
-			scanf("%d %d", &k1, &k2);
-			edge[k1].push_back(k2);
-			++nr[k2];
-		}
-		for (int i = 1; i <= N; i++)
-			if (!nr[i]) {
-				q.push(i);
-				dp[i] = cons[i];
-			}
-		cin >> d;
+			cin >> con[i];
 
-		while (!q.empty()) {
-			q1 = q.front();
+
+		for (int i = 0; i < K; i++) {
+			cin >> a >> b;
+			edge[a].push_back(b);
+			level[b]++;
+		}
+		cin >> W;
+
+		for (int i = 1; i <= N; i++)
+			if (!level[i]) {
+				q.push(i);
+				ans[i] = con[i];
+			}
+
+
+		for (int i = 1; i <= N; i++) {
+			int s = q.front();
 			q.pop();
-			if (q1 == d)
-				break;
-			for (int i = 0; i < edge[q1].size(); i++) {
-				int nex = edge[q1][i];
-				if (dp[nex] < dp[q1] + cons[nex])
-					dp[nex] = dp[q1] + cons[nex];
-				if (!--nr[nex])
-					q.push(nex);
+
+			for (int j = 0; j < edge[s].size(); j++) {
+				int d = edge[s][j];
+				ans[d] = max(ans[s] + con[d], ans[d]);
+				if (!--level[d])
+					q.push(d);
 			}
 		}
-		cout << dp[d] << endl;
+		cout << ans[W] << endl;
 	}
 }
